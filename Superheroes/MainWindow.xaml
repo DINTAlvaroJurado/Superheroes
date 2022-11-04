@@ -1,0 +1,31 @@
+﻿<Window x:Class="Superheroes.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Superheroes"
+        mc:Ignorable="d"
+        Title="Superheroes" Height="450" Width="800" Icon="assets/shield.ico">
+    <DockPanel x:Name="contenedorDockPanel">
+        <DockPanel DockPanel.Dock="Top" Height="50" Margin="5,5,0,5" HorizontalAlignment="Left" Width="782" LastChildFill="False">
+            <TextBlock x:Name="nombreHeroeTextBlock" DockPanel.Dock="Left" FontSize="35" Foreground="White" Text="{Binding Path=Nombre}" FontFamily="Algerian"></TextBlock>
+            <Image x:Name="compañiaPertenecienteImage" DockPanel.Dock="Right" Source="assets/avengers.png"></Image>
+            <Image x:Name="compañiaPerteneciente2Image" DockPanel.Dock="Right" Source="assets/xmen.png"></Image>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="30" LastChildFill="False" HorizontalAlignment="Center">
+            <Image x:Name="leftArrowImage" Source="assets/arrow.png" MouseDown="leftArrowImage_MouseDown"></Image>
+            <TextBlock x:Name="guiaPaginaTextBlock" FontSize="20">1/3</TextBlock>
+            <Image x:Name="rightArrowImage" Source="assets/arrow.png" RenderTransformOrigin="0.5,0.5" MouseDown="rightArrowImage_MouseDown">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </DockPanel>
+        <Image Source="{Binding Path=Imagen}" Margin="10" Stretch="Fill"></Image>
+    </DockPanel>
+</Window>
